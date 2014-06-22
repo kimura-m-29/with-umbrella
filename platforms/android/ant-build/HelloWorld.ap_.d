@@ -42,11 +42,14 @@
 /Users/kimuram/Dropbox/workspace/with-umbrella/platforms/android/assets/www/navigator2.html \
 /Users/kimuram/Dropbox/workspace/with-umbrella/platforms/android/assets/www/page1.html \
 /Users/kimuram/Dropbox/workspace/with-umbrella/platforms/android/assets/www/plugins \
+/Users/kimuram/Dropbox/workspace/with-umbrella/platforms/android/assets/www/rain.html \
 /Users/kimuram/Dropbox/workspace/with-umbrella/platforms/android/assets/www/res \
 /Users/kimuram/Dropbox/workspace/with-umbrella/platforms/android/assets/www/spec \
 /Users/kimuram/Dropbox/workspace/with-umbrella/platforms/android/assets/www/spec.html \
+/Users/kimuram/Dropbox/workspace/with-umbrella/platforms/android/assets/www/svg \
 /Users/kimuram/Dropbox/workspace/with-umbrella/platforms/android/assets/www/vendors \
 /Users/kimuram/Dropbox/workspace/with-umbrella/platforms/android/assets/www/css/index.css \
+/Users/kimuram/Dropbox/workspace/with-umbrella/platforms/android/assets/www/css/weather.css \
 /Users/kimuram/Dropbox/workspace/with-umbrella/platforms/android/assets/www/img/logo.png \
 /Users/kimuram/Dropbox/workspace/with-umbrella/platforms/android/assets/www/js/app.js \
 /Users/kimuram/Dropbox/workspace/with-umbrella/platforms/android/assets/www/js/index.js \
@@ -134,6 +137,12 @@
 /Users/kimuram/Dropbox/workspace/with-umbrella/platforms/android/assets/www/spec/lib/jasmine-1.2.0/jasmine.css \
 /Users/kimuram/Dropbox/workspace/with-umbrella/platforms/android/assets/www/spec/lib/jasmine-1.2.0/jasmine.js \
 /Users/kimuram/Dropbox/workspace/with-umbrella/platforms/android/assets/www/spec/lib/jasmine-1.2.0/MIT.LICENSE \
+/Users/kimuram/Dropbox/workspace/with-umbrella/platforms/android/assets/www/svg/weather \
+/Users/kimuram/Dropbox/workspace/with-umbrella/platforms/android/assets/www/svg/weather/fine.svg \
+/Users/kimuram/Dropbox/workspace/with-umbrella/platforms/android/assets/www/svg/weather/prec.svg \
+/Users/kimuram/Dropbox/workspace/with-umbrella/platforms/android/assets/www/svg/weather/rain.svg \
+/Users/kimuram/Dropbox/workspace/with-umbrella/platforms/android/assets/www/svg/weather/temp.svg \
+/Users/kimuram/Dropbox/workspace/with-umbrella/platforms/android/assets/www/svg/weather/temp2.svg \
 /Users/kimuram/Dropbox/workspace/with-umbrella/platforms/android/assets/www/vendors/onsen \
 /Users/kimuram/Dropbox/workspace/with-umbrella/platforms/android/assets/www/vendors/onsen/css \
 /Users/kimuram/Dropbox/workspace/with-umbrella/platforms/android/assets/www/vendors/onsen/img \
