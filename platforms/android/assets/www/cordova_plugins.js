@@ -43,8 +43,8 @@ module.exports.metadata =
 {
     "org.apache.cordova.device": "0.2.10",
     "org.apache.cordova.vibration": "0.3.9",
-    "eu.mobilion.ibeacon": "0.0.0",
-    "org.apache.cordova.geolocation": "0.3.8"
+    "org.apache.cordova.geolocation": "0.3.8",
+    "eu.mobilion.ibeacon": "0.0.0"
 }
 // BOTTOM OF METADATA
 });

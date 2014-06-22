@@ -39,11 +39,11 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"IBeaconPlugin\"><param name=\"ios-package\" value=\"IBeaconPlugin\" /></feature>",
+                            "xml": "<feature name=\"Geolocation\"><param name=\"ios-package\" value=\"CDVLocation\" /></feature>",
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"Geolocation\"><param name=\"ios-package\" value=\"CDVLocation\" /></feature>",
+                            "xml": "<feature name=\"IBeaconPlugin\"><param name=\"ios-package\" value=\"IBeaconPlugin\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -63,10 +63,10 @@
         "org.apache.cordova.vibration": {
             "PACKAGE_NAME": "org.opst.withumbrella"
         },
-        "eu.mobilion.ibeacon": {
+        "org.apache.cordova.geolocation": {
             "PACKAGE_NAME": "org.opst.withumbrella"
         },
-        "org.apache.cordova.geolocation": {
+        "eu.mobilion.ibeacon": {
             "PACKAGE_NAME": "org.opst.withumbrella"
         }
     },

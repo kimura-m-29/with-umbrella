@@ -41,9 +41,9 @@
 		407BE3F921C3450E8E3BCD8B /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EA79DB06F4E5A8EB81CE5 /* CDVDevice.m */; };
 		38EA80C104FF477CABE7EAF6 /* CDVVibration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F38450408F64A288FA3EB26 /* CDVVibration.m */; };
 		205DF21E66A345A7B6BD93A3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDEBC3B1D1F44E8A30429AB /* AudioToolbox.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		D3041AB583354029BEAA1316 /* IBeaconPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2B92563E1C425CB0A88274 /* IBeaconPlugin.m */; };
-		335292B82BE942E1BBE4489A /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1A780E2BB4D47F59DFAB604 /* CoreBluetooth.framework */; };
 		2429CA61447D478E81F5AE6C /* CDVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5007D4BCDCE64D94962FCCFA /* CDVLocation.m */; };
+		BE841B29CEBF40B5BFC6EC28 /* IBeaconPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F55355DEB946E2882E7732 /* IBeaconPlugin.m */; };
+		15413AFC1DD34E4ABD2C8647 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EFAF1E1889E43B2845A2EE8 /* CoreBluetooth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,11 +113,11 @@
 		4F38450408F64A288FA3EB26 /* CDVVibration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVVibration.m"; path = "org.apache.cordova.vibration/CDVVibration.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		C1020C70B8E34B83808C841B /* CDVVibration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVVibration.h"; path = "org.apache.cordova.vibration/CDVVibration.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		0DDEBC3B1D1F44E8A30429AB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AudioToolbox.framework"; path = "System/Library/Frameworks/AudioToolbox.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
-		8A2B92563E1C425CB0A88274 /* IBeaconPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "IBeaconPlugin.m"; path = "eu.mobilion.ibeacon/IBeaconPlugin.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		15A257D1B8BC4AC3A448B6EF /* IBeaconPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "IBeaconPlugin.h"; path = "eu.mobilion.ibeacon/IBeaconPlugin.h"; sourceTree = "<group>"; fileEncoding = 4; };
-		B1A780E2BB4D47F59DFAB604 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CoreBluetooth.framework"; path = "System/Library/Frameworks/CoreBluetooth.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 		5007D4BCDCE64D94962FCCFA /* CDVLocation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVLocation.m"; path = "org.apache.cordova.geolocation/CDVLocation.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		DEBA49A0AD7F46F3991E099D /* CDVLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVLocation.h"; path = "org.apache.cordova.geolocation/CDVLocation.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		E1F55355DEB946E2882E7732 /* IBeaconPlugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "IBeaconPlugin.m"; path = "eu.mobilion.ibeacon/IBeaconPlugin.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		6EAE110DF538483FA7EDCC23 /* IBeaconPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "IBeaconPlugin.h"; path = "eu.mobilion.ibeacon/IBeaconPlugin.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		0EFAF1E1889E43B2845A2EE8 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CoreBluetooth.framework"; path = "System/Library/Frameworks/CoreBluetooth.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +131,7 @@
 				305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */,
 				5AEE5B35173C68D80009041E /* CoreLocation.framework in Frameworks */,
 				205DF21E66A345A7B6BD93A3 /* AudioToolbox.framework in Frameworks */,
-				335292B82BE942E1BBE4489A /* CoreBluetooth.framework in Frameworks */,
+				15413AFC1DD34E4ABD2C8647 /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,7 +226,7 @@
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 				305D5FD0115AB8F900A74A75 /* MobileCoreServices.framework */,
 				0DDEBC3B1D1F44E8A30429AB /* AudioToolbox.framework */,
-				B1A780E2BB4D47F59DFAB604 /* CoreBluetooth.framework */,
+				0EFAF1E1889E43B2845A2EE8 /* CoreBluetooth.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -246,10 +246,10 @@
 				C4E66A1A901A4CDE908A5455 /* CDVDevice.h */,
 				4F38450408F64A288FA3EB26 /* CDVVibration.m */,
 				C1020C70B8E34B83808C841B /* CDVVibration.h */,
-				8A2B92563E1C425CB0A88274 /* IBeaconPlugin.m */,
-				15A257D1B8BC4AC3A448B6EF /* IBeaconPlugin.h */,
 				5007D4BCDCE64D94962FCCFA /* CDVLocation.m */,
 				DEBA49A0AD7F46F3991E099D /* CDVLocation.h */,
+				E1F55355DEB946E2882E7732 /* IBeaconPlugin.m */,
+				6EAE110DF538483FA7EDCC23 /* IBeaconPlugin.h */,
 			);
 			name = Plugins;
 			path = "with-umbrella/Plugins";
@@ -446,8 +446,8 @@
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				407BE3F921C3450E8E3BCD8B /* CDVDevice.m in Sources */,
 				38EA80C104FF477CABE7EAF6 /* CDVVibration.m in Sources */,
-				D3041AB583354029BEAA1316 /* IBeaconPlugin.m in Sources */,
 				2429CA61447D478E81F5AE6C /* CDVLocation.m in Sources */,
+				BE841B29CEBF40B5BFC6EC28 /* IBeaconPlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

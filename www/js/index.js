@@ -34,7 +34,7 @@ var app = {
                 alert('success!');
                 var region = new ibeacon.Region({
                     identifier: '',
-                    uuid: 'B35AC750-0604-4C0B-A142-7E3584D5C65D'
+                    uuid: 'FC671261-B56B-4055-8204-E0078C67070B'
                 });
                 alert('startMonitoringForRegion');
 

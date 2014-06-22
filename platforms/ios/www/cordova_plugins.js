@@ -15,29 +15,6 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/eu.mobilion.ibeacon/www/ibeacon.js",
-        "id": "eu.mobilion.ibeacon.ibeacon",
-        "clobbers": [
-            "ibeacon"
-        ]
-    },
-    {
-        "file": "plugins/eu.mobilion.ibeacon/www/region.js",
-        "id": "eu.mobilion.ibeacon.region"
-    },
-    {
-        "file": "plugins/eu.mobilion.ibeacon/www/beacon.js",
-        "id": "eu.mobilion.ibeacon.beacon"
-    },
-    {
-        "file": "plugins/eu.mobilion.ibeacon/www/helper.js",
-        "id": "eu.mobilion.ibeacon.helper"
-    },
-    {
-        "file": "plugins/eu.mobilion.ibeacon/www/defaults.js",
-        "id": "eu.mobilion.ibeacon.defaults"
-    },
-    {
         "file": "plugins/org.apache.cordova.geolocation/www/Coordinates.js",
         "id": "org.apache.cordova.geolocation.Coordinates",
         "clobbers": [
@@ -64,6 +41,29 @@ module.exports = [
         "clobbers": [
             "navigator.geolocation"
         ]
+    },
+    {
+        "file": "plugins/eu.mobilion.ibeacon/www/ibeacon.js",
+        "id": "eu.mobilion.ibeacon.ibeacon",
+        "clobbers": [
+            "ibeacon"
+        ]
+    },
+    {
+        "file": "plugins/eu.mobilion.ibeacon/www/region.js",
+        "id": "eu.mobilion.ibeacon.region"
+    },
+    {
+        "file": "plugins/eu.mobilion.ibeacon/www/beacon.js",
+        "id": "eu.mobilion.ibeacon.beacon"
+    },
+    {
+        "file": "plugins/eu.mobilion.ibeacon/www/helper.js",
+        "id": "eu.mobilion.ibeacon.helper"
+    },
+    {
+        "file": "plugins/eu.mobilion.ibeacon/www/defaults.js",
+        "id": "eu.mobilion.ibeacon.defaults"
     }
 ];
 module.exports.metadata = 
@@ -71,8 +71,8 @@ module.exports.metadata =
 {
     "org.apache.cordova.device": "0.2.10",
     "org.apache.cordova.vibration": "0.3.9",
-    "eu.mobilion.ibeacon": "0.0.0",
-    "org.apache.cordova.geolocation": "0.3.8"
+    "org.apache.cordova.geolocation": "0.3.8",
+    "eu.mobilion.ibeacon": "0.0.0"
 }
 // BOTTOM OF METADATA
 });

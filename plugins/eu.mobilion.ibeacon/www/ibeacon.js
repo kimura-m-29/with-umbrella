@@ -1,6 +1,7 @@
 'use strict';
 
 var exec = require('cordova/exec');
+var defaults = require('./defaults');
 var Region = require('./region');
 var Beacon = require('./beacon');
 
@@ -46,31 +47,152 @@ var ibeacon = {
 
   Beacon: Beacon,
 
+  /**
+   * `identifier` is the global default identifier for your application. It
+   * should be set somewhere in configuration process. Each `Region` or
+   * `Beacon` can also have an individual identifier.
+   *
+   * ### Example:
+   *
+   * ```js
+   * ibeacon.identifier = 'my-unique-identifier';
+   *
+   * var region = new ibeacon.Region({
+   *   uuid: 'CCE0847C-66CA-45F0-888F-89DD51EE38D2'
+   * });
+   *
+   * console.log(region.identifier); // 'my-unique-identifier'
+   * ```
+   *
+   * @name identifier
+   */
+  get identifier() {
+    return defaults.identifier;
+  },
+
+  set identifier(identifier) {
+    defaults.identifier = identifier;
+  },
+
+  /**
+   * `startAdvertising()` lets the specified beacon start sending.
+   *
+   * ### Example:
+   *
+   * ```js
+   * var beacon = new ibeacon.Beacon({
+   *   uuid: 'CCE0847C-66CA-45F0-888F-89DD51EE38D2',
+   *   major: 10000,
+   *   minor: 10000
+   * });
+   *
+   * ibeacon.startAdvertising({
+   *   beacon: beacon
+   * });
+   * ```
+   *
+   * @name startAdvertising
+   * @param {Object} options
+   * @param {Beacon|Array} options.beacon Beacon(s) to advertise
+   */
   startAdvertising: function(options) {
 
     checkParam(options, 'beacon');
 
-    callNative('startAdvertising', options.beacon);
+    if (!(options.beacon instanceof Array)) {
+      options.beacon = [options.beacon];
+    }
 
-  },
+    for (var i = 0; i < options.beacon.length; i++) {
+      callNative('startAdvertising', options.beacon[i]);
+    }
 
-  stopAdvertising: function(onSuccess) {
-    callNative('stopAdvertising', null, onSuccess);
-  },
-
-  isAdvertising: function(onSuccess) {
-    callNative('isAdvertising', null, onSuccess);
   },
 
   /**
-   * startMonitoringForRegion() lets you know whether you see any beacon in a
+   * `stopAdvertising()` stops the specified beacon from sending.
+   *
+   * ### Example:
+   *
+   * ```js
+   * var beacon = new ibeacon.Beacon({
+   *   uuid: 'CCE0847C-66CA-45F0-888F-89DD51EE38D2',
+   *   major: 10000,
+   *   minor: 10000
+   * });
+   *
+   * ibeacon.stopAdvertising({
+   *   beacon: beacon
+   * });
+   * ```
+   *
+   * @name stopAdvertising
+   * @param {Object} options
+   * @param {Beacon|Array} options.beacon Beacon(s) which to stop to advertise
+   */
+  stopAdvertising: function(options) {
+
+    checkParam(options, 'beacon');
+
+    if (!(options.beacon instanceof Array)) {
+      options.beacon = [options.beacon];
+    }
+
+    for (var i = 0; i < options.beacon.length; i++) {
+      callNative('stopAdvertising', options.beacon[i]);
+    }
+
+  },
+
+  /**
+   * `isAdvertising()` calls back with the result whether the specified beacon
+   * is sending or not.
+   *
+   * ### Example:
+   *
+   * ```js
+   * var beacon = new ibeacon.Beacon({
+   *   uuid: 'CCE0847C-66CA-45F0-888F-89DD51EE38D2',
+   *   major: 10000,
+   *   minor: 10000
+   * });
+   *
+   * ibeacon.isAdvertising({
+   *   beacon: beacon,
+   *   isAdvertising: function(result) {
+   *     if (result.isAdvertising) console.log('The beacon is advertising');
+   *     else console.log('The beacon is not advertising');
+   *   };
+   * });
+   * ```
+   *
+   * @name isAdvertising
+   * @param {Object} options
+   * @param {Beacon|Array} options.beacon Beacon(s) which to stop to advertise
+   */
+  isAdvertising: function(options) {
+
+    checkParam(options, 'beacon');
+    checkParam(options, 'isAdvertising');
+
+    if (!(options.beacon instanceof Array)) {
+      options.beacon = [options.beacon];
+    }
+
+    for (var i = 0; i < options.beacon.length; i++) {
+      callNative('isAdvertising', options.beacon[i]);
+    }
+
+  },
+
+  /**
+   * `startMonitoringForRegion()` lets you know whether you see any beacon in a
    * given region.
    *
    * ### Example:
    *
    * ```js
    * var region = new ibeacon.Region({
-   *   identifier: 'my-app',
    *   uuid: 'CCE0847C-66CA-45F0-888F-89DD51EE38D2'
    * });
    *
@@ -131,14 +253,13 @@ var ibeacon = {
   },
 
   /**
-   * stopMonitoringForRegion() stops monitoring and callbacks of `startMonitoringForRegion`
+   * `stopMonitoringForRegion()` stops monitoring and callbacks of `startMonitoringForRegion`
    * for the given region.
    *
    * ### Example:
    *
    * ```js
    * var region = new ibeacon.Region({
-   *   identifier: 'my-app',
    *   uuid: 'CCE0847C-66CA-45F0-888F-89DD51EE38D2'
    * });
    *
@@ -166,20 +287,19 @@ var ibeacon = {
   },
 
   /**
-   * startRangingBeaconsInRegion() starts ranging for beacons in the given
+   * `startRangingBeaconsInRegion()` starts ranging for beacons in the given
    * region and calls back every second
    *
    * ### Example:
    *
    * ```js
    * var region = new ibeacon.Region({
-   *   identifier: 'my-app',
    *   uuid: 'CCE0847C-66CA-45F0-888F-89DD51EE38D2'
    * });
    *
    * ibeacon.startRangingBeaconsInRegion({
    *   region: region,
-   *   didDetermineState: function(result) {
+   *   didRangeBeacons: function(result) {
    *     console.log('I see ' + result.beacons.length + ' beacons');
    *   }
    * });
@@ -222,13 +342,12 @@ var ibeacon = {
   },
 
   /**
-   * stopRangingBeaconsInRegion() stops ranging and callbacks of `startRangingBeaconsInRegion`
+   * `stopRangingBeaconsInRegion()` stops ranging and callbacks of `startRangingBeaconsInRegion`
    *
    * ### Example:
    *
    * ```js
    * var region = new ibeacon.Region({
-   *   identifier: 'my-app',
    *   uuid: 'CCE0847C-66CA-45F0-888F-89DD51EE38D2'
    * });
    *

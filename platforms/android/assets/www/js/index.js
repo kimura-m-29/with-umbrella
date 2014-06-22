@@ -30,20 +30,26 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function () {
         app.receivedEvent('deviceready');
-        var region = new ibeacon.Region({
-            identifier: 'my-app',
-            uuid: 'B35AC750-0604-4C0B-A142-7E3584D5C65D'
-        });
+        navigator.geolocation.getCurrentPosition(function () {
+                alert('success!');
+                var region = new ibeacon.Region({
+                    identifier: '',
+                    uuid: 'FC671261-B56B-4055-8204-E0078C67070B'
+                });
+                alert('startMonitoringForRegion');
 
-        alert(region);
+                ibeacon.startMonitoringForRegion({
+                    region: region,
+                    didDetermineState: function (result) {
+                        if (result.state === 'inside') alert('I see you!')
+                        else alert('Where are you?');
+                    }
+                });
+            },
+            function () {
+                alert('error!');
+            }, { maximumAge: 3000, timeout: 15000, enableHighAccuracy: true });
 
-        ibeacon.startMonitoringForRegion({
-            region: region,
-            didDetermineState: function (result) {
-                if (result.state === 'inside') alert('I see you!')
-                else alert('Where are you?');
-            }
-        });
 //        navigator.notification.vibrate(1000);
 //        AttendeaseBeacons.monitor(['3ACE8EC3-4F0E-4857-B2D8-18550DFDE39A'], function () {
 //            return setInterval((function () {

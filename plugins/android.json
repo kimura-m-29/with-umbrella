@@ -70,10 +70,10 @@
         "org.apache.cordova.vibration": {
             "PACKAGE_NAME": "org.opst.withumbrella"
         },
-        "eu.mobilion.ibeacon": {
+        "org.apache.cordova.geolocation": {
             "PACKAGE_NAME": "org.opst.withumbrella"
         },
-        "org.apache.cordova.geolocation": {
+        "eu.mobilion.ibeacon": {
             "PACKAGE_NAME": "org.opst.withumbrella"
         }
     },
