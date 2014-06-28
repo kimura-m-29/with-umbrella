@@ -4,15 +4,19 @@
     }
 	body.rain{
 		background-color: #7ad4ce;
+		-webkit-transition:2s background-color ease-out;
 	}
 	body.cloud{
 		background-color: #bdc3c7;
+		-webkit-transition:2s background-color ease-out;
 	}
 	body.fine_d{
 		background-color: #fdc44f;
+		-webkit-transition:2s background-color ease-out;
 	}
 	body.fine_n{
 		background-color: #2980b9;
+		-webkit-transition:2s background-color ease-out;
 	}
     #wrapper{
 /*		background-color: #7ad4ce; */
