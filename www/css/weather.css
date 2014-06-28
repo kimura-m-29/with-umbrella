@@ -24,6 +24,11 @@
 	img.weather{
         width:90%; height:210px;
 	}
+	div.loading{
+        width:90%; height:210px;
+        margin: 0 auto;
+		line-height:210px;
+	}
     .txt{
         margin: 30px 30px;
         text-align:center;
@@ -54,12 +59,12 @@
 	    font-size:0.4em;
 	}
     .icon_temp{
-        background:url(../svg/weather/temp2.svg) no-repeat;
+        background:url(../svg/icon/temp2.svg) no-repeat;
 		background-size:45px 45px;
         background-position:left 0 bottom 0;
     }
     .icon_prec{
-        background:url(../svg/weather/prec.svg) no-repeat;
+        background:url(../svg/icon/prec.svg) no-repeat;
 		background-size:40px 45px;
         background-position:left 0 bottom 0;
     }
