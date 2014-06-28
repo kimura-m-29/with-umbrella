@@ -22,9 +22,10 @@
 			$scope.place = "--";
 			$scope.temp = "--";
 			$scope.rain = "--";
-			$scope.color="default";
 			$scope.iconPath = "";
+			$scope.notice = "loading...";
 			$scope.loading = true;
+			$scope.bodyClass="rain";
 
 			// 天気情報をげっと
 			weatherService.getWeatherInfo($scope.cityId)
@@ -34,15 +35,15 @@ console.log(response);
 					$scope.place = $info.name + " - " + $info.date;
 					$scope.temp = $info.temp;
 					$scope.rain = $info.rain;
-					$scope.colorClass = $info.color;
 					if( $info.iconPath ){
 						$scope.iconPath = $info.iconPath;
 					}
 					if( $scope.rain > 0 ){
 						$scope.notice = "傘もってけ！";
 					}else{
-						$scope.notice = "";
+						$scope.notice = "現在のお天気";
 					}
+					$scope.bodyClass = "rain";
 console.log($info);
 					// ローディング終了
 					$scope.loading = false;
@@ -53,8 +54,29 @@ console.log($info);
 				});
 		};
 
-		var changeWeather = (function(){
-			
+		// 画面色チェンジ（キックする場所が見つからず…）
+		$scope.changeColor = (function( $iconPath ){
+			if( !$iconPath ){
+				return 'cloud';
+			}
+			var $iconId = $iconPath.match(".+/(.+?)\.[a-z]+([\?#;].*)?$")[1];
+			switch( $iconId ){
+				case '01d':
+				case '02d':
+					return 'fine_d';
+				case '01n':
+				case '02n':
+					return 'fine_n';
+				case '09d':
+				case '09n':
+				case '10d':
+				case '10n':
+					return 'rain';
+				default:
+					return 'cloud';
+			}
+			return 'cloud';
+
 		});
 
 		// 初期表示時用
@@ -90,6 +112,7 @@ console.log($info);
 			$ret.date = now.getFullYear() + "/" + (now.getMonth()+1) + "/" + now.getDate();
 			$ret.temp = Math.round($info.main.temp - CELSIUS_NUM);
 			if( "rain" in $info ){
+				// 本当は $info.rain.3h を取得したいが、エラーになってしまう
 				$ret.rain = $info.rain;
 			}
 			if( "weather" in $info ){
@@ -103,18 +126,9 @@ console.log($info);
 				$ret.snow = $info.snow;
 			}
 
-			$ret.color = "def";
-			
 			
 			return $ret;
 		};
-
-		var decideColor = function( $iconId ){
-			
-		};
-
-
-
 	}]);
 
 

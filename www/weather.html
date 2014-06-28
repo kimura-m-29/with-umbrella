@@ -1,38 +1,38 @@
 <!doctype html>
 <html lang="ja" ng-app="myApp">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>あめー</title>  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>トップ</title>  
   
-  <link rel="stylesheet" href="vendors/onsen/css/onsenui.css">  
-  <link rel="stylesheet" href="vendors/onsen/css/topcoat-mobile-onsen-blue.css">    
-  <link rel="stylesheet" href="css/weather.css">  
+    <link rel="stylesheet" href="vendors/onsen/css/onsenui.css">  
+    <link rel="stylesheet" href="vendors/onsen/css/topcoat-mobile-onsen-blue.css">    
+    <link rel="stylesheet" href="css/weather.css">  
 
-  <script src="vendors/onsen/js/angular/angular.js"></script>    
-  <script src="vendors/onsen/js/onsenui.js"></script>    
-  <script src="js/weather.js"></script>
+    <script src="vendors/onsen/js/angular/angular.js"></script>    
+    <script src="vendors/onsen/js/onsenui.js"></script>    
+    <script src="js/weather.js"></script>
 
 </head>
 
-<body class="rain">
+<body ng-init="color='cloud'" ng-class="color">
 <div id="wrapper" ng-controller="weatherController">
-	<div class="txt">
-		<div class="txt_notice">{{ notice }}</div>
-	</div>
-	
-	<img ng-src="{{iconPath}}" class="weather" ng-hide="loading">
-	<div class="loading" ng-show="loading">
-		<ons-icon icon="spinner" spin="true"></ons-icon>
-	</div>
+    <div class="txt">
+        <div class="txt_notice">{{ notice }}</div>
+    </div>
+
+    <img ng-src="{{iconPath}}" class="weather" ng-hide="loading">
+    <div class="loading" ng-show="loading">
+        <ons-icon icon="spinner" spin="true"></ons-icon>
+    </div>
 
 {{resdata}}
-	<div class="txt">
-		<div class="icon icon_temp b_20">{{ temp }}<span class="txt_unit">℃</span></div>
+    <div class="txt">
+        <div class="icon icon_temp b_20">{{ temp }}<span class="txt_unit">℃</span></div>
         <div class="icon icon_prec b_20">{{ rain }}<span class="txt_unit">mm</span></div>
-	    <div class="clear txt_place b_20">{{ place }}</div>
+        <div class="clear txt_place b_20">{{ place }}</div>
         <ons-button type="large" ng-click="reload();">reload</ons-button> 
-	</div>
+    </div>
 </div>
 </body>
 </html>
