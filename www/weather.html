@@ -20,8 +20,11 @@
 	<div class="txt">
 		<div class="txt_notice">{{ notice }}</div>
 	</div>
-
-	<img src="svg/weather/rain.svg" class="weather">
+	
+	<img ng-src="{{iconPath}}" class="weather" ng-hide="loading">
+	<div class="loading" ng-show="loading">
+		<ons-icon icon="spinner" spin="true"></ons-icon>
+	</div>
 
 {{resdata}}
 	<div class="txt">
