@@ -9,6 +9,7 @@
 
         return {
             startRangingBeaconsInRegion: function ($scope) {
+                var dialogOpenFlg = false;
                 ibeacon.startRangingBeaconsInRegion({
                     region: new ibeacon.Region({
                         uuid: $scope.setting.uuid
@@ -16,9 +17,17 @@
                     didRangeBeacons: function (result) {
                         console.log(JSON.stringify(result));
                         var beacon = result.beacons[0];
+                        var stoppedTime = localStorage.getItem('stoppedTime');
+                        var tenminuitesMs = 1000 * 60 * 10;
 
-                        if (beacon.proximity == $scope.setting.proximity) {
+                        if (beacon.proximity == $scope.setting.proximity && !dialogOpenFlg && (!stoppedTime || new Date().getTime() - stoppedTime > tenminuitesMs)) {
+                            dialogOpenFlg = true;
                             navigator.notification.vibrate(1000);
+                            navigator.notification.confirm('雨が降ります！傘をお忘れなく！', function (buttonIndex) {
+                                navigator.notification.cancelVibration();
+                                localStorage.setItem('stoppedTime', new Date().getTime());
+                                dialogOpenFlg = false;
+                            }, '傘を忘れずに！！', ['OK']);
                         }
                     }
                 });
