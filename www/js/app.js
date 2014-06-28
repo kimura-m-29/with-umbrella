@@ -17,6 +17,11 @@
                     didRangeBeacons: function (result) {
                         console.log(JSON.stringify(result));
                         var beacon = result.beacons[0];
+
+                        if (!beacon) {
+                            return;
+                        }
+
                         var stoppedTime = localStorage.getItem('stoppedTime');
                         var tenminuitesMs = 1000 * 60 * 10;
 
@@ -43,8 +48,7 @@
         var defaultSettingJson = {
             uuid: 'B9407F30-F5F8-466E-AFF9-25556B57FE6D',
             proximity: 'near',
-            area: '13',
-            chanceOfRain: '60'
+            area: '13'
         };
 
         if (setting) {

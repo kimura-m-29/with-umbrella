@@ -1,35 +1,40 @@
 <!doctype html>
 <html lang="en" ng-app="myApp">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>あめー</title>  
-  
-  <link rel="stylesheet" href="lib/onsen/css/onsenui.css">  
-  <link rel="stylesheet" href="lib/onsen/css/topcoat-mobile-onsen-blue.css">    
-  <link rel="stylesheet" href="css/app.css"/>
-  <link rel="stylesheet" href="css/weather.css">  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>あめー</title>
 
-  <script src="lib/onsen/js/angular/angular.js"></script>    
-  <script src="lib/onsen/js/onsenui.js"></script>    
-  <script src="js/app.js"></script> 
-  </head>
+    <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
+    <link rel="stylesheet" href="lib/onsen/css/topcoat-mobile-onsen-blue.css">
+    <link rel="stylesheet" href="css/app.css"/>
+    <link rel="stylesheet" href="css/weather.css">
+
+    <script src="lib/onsen/js/angular/angular.js"></script>
+    <script src="lib/onsen/js/onsenui.js"></script>
+    <script src="js/app.js"></script>
+</head>
 
 <body>
 <div id="wrapper">
-	<div class="txt">
-		<div class="txt_notice">傘もった？</div>
-		<div class="txt_notice_sub">Don't forget to bring your umbrella in case it rains!</div>
-	</div>
-	<div class="weather">
-	</div>
+    <div class="txt">
+        <div class="txt_notice">傘もった？</div>
+        <div class="txt_notice_sub">Don't forget to bring your umbrella in case it rains!</div>
+    </div>
+    <div class="weather">
+    </div>
 
-	<div class="txt">
-		<div class="icon icon_temp b_20">28<span class="txt_unit">℃</span></div>
+    <div class="txt">
+        <div class="icon icon_temp b_20">28<span class="txt_unit">℃</span></div>
         <div class="icon icon_prec b_20">30<span class="txt_unit">%</span></div>
-	    <div class="clear txt_place b_20">東京 - 新宿</div>
-        <button class="topcoat-button--large">くわしく</button> 
-	</div>
+        <div class="clear txt_place b_20">東京 - 新宿</div>
+        <ons-icon
+                size="2x"
+                icon="gear"
+                ng-click="ons.screen.presentPage('settings.html')">
+        </ons-icon>
+        <button class="topcoat-button--large">くわしく</button>
+    </div>
 </div>
 </body>
 </html>
