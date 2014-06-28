@@ -25,7 +25,7 @@
 			$scope.iconPath = "";
 			$scope.notice = "loading...";
 			$scope.loading = true;
-			$scope.bodyClass="rain";
+			$scope.bodyClass="cloud";
 
 			// 天気情報をげっと
 			weatherService.getWeatherInfo($scope.cityId)
@@ -112,8 +112,7 @@ console.log($info);
 			$ret.date = now.getFullYear() + "/" + (now.getMonth()+1) + "/" + now.getDate();
 			$ret.temp = Math.round($info.main.temp - CELSIUS_NUM);
 			if( "rain" in $info ){
-				// 本当は $info.rain.3h を取得したいが、エラーになってしまう
-				$ret.rain = $info.rain;
+				$ret.rain = $info.rain['3h'];
 			}
 			if( "weather" in $info ){
 				// とりあえず1件目
@@ -123,7 +122,7 @@ console.log($info);
 				}
 			}
 			if( "snow" in $info ){
-				$ret.snow = $info.snow;
+				$ret.snow = $info.snow['3h'];
 			}
 
 			
