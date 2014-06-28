@@ -5,29 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>あめー</title>  
   
-  <link rel="stylesheet" href="lib/onsen/css/onsenui.css">  
-  <link rel="stylesheet" href="lib/onsen/css/topcoat-mobile-onsen-blue.css">    
+  <link rel="stylesheet" href="vendors/onsen/css/onsenui.css">  
+  <link rel="stylesheet" href="vendors/onsen/css/topcoat-mobile-onsen-blue.css">    
   <link rel="stylesheet" href="css/weather.css">  
 
-  <script src="lib/onsen/js/angular/angular.js"></script>    
-  <script src="lib/onsen/js/onsenui.js"></script>    
+  <script src="vendors/onsen/js/angular/angular.js"></script>    
+  <script src="vendors/onsen/js/onsenui.js"></script>    
   <script src="js/weather.js"></script>
 
 </head>
 
-<body>
+<body class="rain">
 <div id="wrapper" ng-controller="weatherController">
 	<div class="txt">
 		<div class="txt_notice">{{ notice }}</div>
 	</div>
-	<div class="weather">
-	</div>
+
+	<img src="svg/weather/rain.svg" class="weather">
+
 {{resdata}}
 	<div class="txt">
 		<div class="icon icon_temp b_20">{{ temp }}<span class="txt_unit">℃</span></div>
-        <div class="icon icon_prec b_20">{{ prec }}<span class="txt_unit">％</span></div>
+        <div class="icon icon_prec b_20">{{ rain }}<span class="txt_unit">mm</span></div>
 	    <div class="clear txt_place b_20">{{ place }}</div>
-        <ons-button type="large" ng-click="reload();">最新の天気を取得</ons-button> 
+        <ons-button type="large" ng-click="reload();">reload</ons-button> 
 	</div>
 </div>
 </body>
