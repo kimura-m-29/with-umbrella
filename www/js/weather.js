@@ -25,13 +25,13 @@
 			$scope.iconPath = "";
 			$scope.notice = "loading...";
 			$scope.loading = true;
-			$scope.bodyClass="cloud";
+			$scope.bgcolor="cloud";
 
 			// 天気情報をげっと
 			weatherService.getWeatherInfo($scope.cityId)
 				.success(function(response) {
 					var $info = weatherService.loadWeatherInfo(response);
-console.log(response);
+//console.log(response);
 					$scope.place = $info.name + " - " + $info.date;
 					$scope.temp = $info.temp;
 					$scope.rain = $info.rain;
@@ -43,8 +43,9 @@ console.log(response);
 					}else{
 						$scope.notice = "現在のお天気";
 					}
-					$scope.bodyClass = "rain";
-console.log($info);
+					$scope.bgcolor = changeColor($scope.iconPath);
+
+//console.log($scope);
 					// ローディング終了
 					$scope.loading = false;
 					
@@ -54,8 +55,8 @@ console.log($info);
 				});
 		};
 
-		// 画面色チェンジ（キックする場所が見つからず…）
-		$scope.changeColor = (function( $iconPath ){
+		// 画面色チェンジ
+		var changeColor = (function( $iconPath ){
 			if( !$iconPath ){
 				return 'cloud';
 			}
@@ -76,7 +77,6 @@ console.log($info);
 					return 'cloud';
 			}
 			return 'cloud';
-
 		});
 
 		// 初期表示時用

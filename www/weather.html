@@ -15,13 +15,13 @@
 
 </head>
 
-<body ng-init="color='cloud'" ng-class="color">
-<div id="wrapper" ng-controller="weatherController">
+<body ng-class="bgcolor" ng-controller="weatherController">
+<div id="wrapper">
     <div class="txt">
         <div class="txt_notice">{{ notice }}</div>
     </div>
 
-    <img ng-src="{{iconPath}}" class="weather" ng-hide="loading">
+    <img ng-src="{{iconPath}}" class="weather" ng-hide="loading" >
     <div class="loading" ng-show="loading">
         <ons-icon icon="spinner" spin="true"></ons-icon>
     </div>
