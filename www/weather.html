@@ -3,35 +3,41 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>トップ</title>  
-  
-    <link rel="stylesheet" href="vendors/onsen/css/onsenui.css">  
-    <link rel="stylesheet" href="vendors/onsen/css/topcoat-mobile-onsen-blue.css">    
-    <link rel="stylesheet" href="css/weather.css">  
+    <title>トップ</title>
 
-    <script src="vendors/onsen/js/angular/angular.js"></script>    
-    <script src="vendors/onsen/js/onsenui.js"></script>    
+    <link rel="stylesheet" href="vendors/onsen/css/onsenui.css">
+    <link rel="stylesheet" href="vendors/onsen/css/topcoat-mobile-onsen-blue.css">
+    <link rel="stylesheet" href="css/weather.css">
+
+    <script src="vendors/onsen/js/angular/angular.js"></script>
+    <script src="vendors/onsen/js/onsenui.js"></script>
     <script src="js/weather.js"></script>
 
 </head>
 
 <body ng-class="bgcolor" ng-controller="weatherController">
 <div id="wrapper">
+    <ons-icon
+            size="2x"
+            icon="gear"
+            ng-click="ons.screen.presentPage('settings.html')">
+    </ons-icon>
     <div class="txt">
         <div class="txt_notice">{{ notice }}</div>
     </div>
 
-    <img ng-src="{{iconPath}}" class="weather" ng-hide="loading" >
+    <img ng-src="{{iconPath}}" class="weather" ng-hide="loading">
+
     <div class="loading" ng-show="loading">
         <ons-icon icon="spinner" spin="true"></ons-icon>
     </div>
 
-{{resdata}}
+    {{resdata}}
     <div class="txt">
         <div class="icon icon_temp b_20">{{ temp }}<span class="txt_unit">℃</span></div>
         <div class="icon icon_prec b_20">{{ rain }}<span class="txt_unit">mm</span></div>
         <div class="clear txt_place b_20">{{ place }}</div>
-        <ons-button type="large" ng-click="reload();">reload</ons-button> 
+        <ons-button type="large" ng-click="reload();">reload</ons-button>
     </div>
 </div>
 </body>

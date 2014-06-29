@@ -41,6 +41,10 @@
                         {
                             "xml": "<feature name=\"Notification\"><param name=\"ios-package\" value=\"CDVNotification\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Geolocation\"><param name=\"ios-package\" value=\"CDVLocation\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -60,6 +64,9 @@
             "PACKAGE_NAME": "org.opst.withumbrella"
         },
         "org.apache.cordova.dialogs": {
+            "PACKAGE_NAME": "org.opst.withumbrella"
+        },
+        "org.apache.cordova.geolocation": {
             "PACKAGE_NAME": "org.opst.withumbrella"
         }
     },
